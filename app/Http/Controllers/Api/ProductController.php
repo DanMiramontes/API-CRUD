@@ -15,12 +15,15 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        if(!$products){
+      
+       if(!$products){
           return response()->json([],204);
         }
         return response()->json([
             "results" => $products
         ], 200);
+      
+      //  return view('welcome',compact('products'));
     }
 
 
